@@ -96,6 +96,21 @@ namespace PCLogic
         {
             MessageBox.Show("/");
         }
+
+        private void straightCode_Selected(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void reversCode_Selected(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void addCode_Selected(object sender, RoutedEventArgs e)
+        {
+
+        }
         
 
     }
