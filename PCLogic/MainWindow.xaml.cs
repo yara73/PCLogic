@@ -20,8 +20,9 @@ namespace PCLogic
     /// </summary>
     public partial class MainWindow : Window
     {
-        int numbInt = 0;
-        double numbDouble = 0;
+        int numbInt = 0;//top Text box, here store it`s value
+        double numbDouble = 0;//bottom textbox, again store value here
+        Algorithme alg = new Algorithme();
         public MainWindow()
         {
             InitializeComponent();
@@ -34,11 +35,11 @@ namespace PCLogic
             {
                 numbInt = Convert.ToInt32(intTextBox.Text);
                 numbDouble = Convert.ToDouble(floatTextBox.Text);
-            
+                
 
                 if(numbInt != 0)
                 {
-                    string finalString = Inversion(numbInt);
+                    string finalString = alg.Inversion(numbInt);
                     outputText.Text = "Inverted numb is: "+finalString;
                 }
                 if(numbDouble != 0)
@@ -64,18 +65,7 @@ namespace PCLogic
 
             return numbString;
         }
-        private string Inversion(double numb)
-        {
-            char[] numbChar = numb.ToString().ToCharArray();
-            string numbString = "";
-            for (int i = 0; i < numbChar.Length; i++)
-            {
-                numbChar[i] = (numbChar[i] > '0') ? '1' : '0';
-                numbString += numbChar[i];
-            }
-
-            return numbString;
-        }
+        
 
         private void plus_Selected(object sender, RoutedEventArgs e)
         {
