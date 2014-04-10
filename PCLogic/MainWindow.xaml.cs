@@ -99,7 +99,7 @@ namespace PCLogic
 
         private void straightCode_Selected(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void reversCode_Selected(object sender, RoutedEventArgs e)
