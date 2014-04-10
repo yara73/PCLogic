@@ -19,5 +19,6 @@
                 <DropShadowEffect/>
             </TextBlock.Effect>
         </TextBlock>
+        <ComboBox HorizontalAlignment="Left" Margin="198,134,0,0" VerticalAlignment="Top" Width="75"/>
     </Grid>
 </Window>
