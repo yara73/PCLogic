@@ -200,6 +200,7 @@ namespace PCLogic
             string[] outstring = new string[3];
             outstring = alg.GUIConverter(intTextBox.Text, 10, 2);
             outputText.Text = outstring[1];
+            MessageBox.Show("Result: " + outstring[0]);
         }
         
 
