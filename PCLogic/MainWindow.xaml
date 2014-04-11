@@ -24,5 +24,6 @@
             <ComboBoxItem x:Name="reversCode" Content="reverse" HorizontalAlignment="Left" Width="92" Selected="reversCode_Selected"/>
             <ComboBoxItem x:Name="addCode" Content="additional" HorizontalAlignment="Left" Width="92" Selected="addCode_Selected"/>
         </ComboBox>
+        <Button x:Name="decBinButton" Content="Dec-Bin" HorizontalAlignment="Left" Margin="48,109,0,0" VerticalAlignment="Top" Width="59" Click="decBinButton_Click"/>
     </Grid>
 </Window>

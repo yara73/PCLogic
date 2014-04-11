@@ -35,14 +35,14 @@ namespace PCLogic
             {
                 numbInt = Convert.ToInt32(intTextBox.Text);
                 numbDouble = Convert.ToDouble(floatTextBox.Text);
-                
 
-                if(numbInt != 0)
+
+                if (numbInt != 0)
                 {
                     string finalString = alg.Inversion(numbInt);
-                    outputText.Text = "Inverted numb is: "+finalString;
+                    outputText.Text = "Inverted numb is: " + finalString;
                 }
-                if(numbDouble != 0)
+                if (numbDouble != 0)
                 {
                     MessageBox.Show(numbDouble.ToString());
                 }
@@ -53,7 +53,7 @@ namespace PCLogic
                 MessageBox.Show("Введите допустимое число!");
             }
         }
-        
+
         private void plus_Selected(object sender, RoutedEventArgs e)
         {
             try
@@ -61,8 +61,8 @@ namespace PCLogic
                 outputText.TextAlignment = TextAlignment.Right;
                 numbInt = Convert.ToInt32(intTextBox.Text);
                 numbDouble = Convert.ToDouble(floatTextBox.Text);
-                double res = numbInt + numbDouble;                               
-                outputText.Text = "" + alg.convertNumSys(numbInt.ToString(),10,2)+"\n"+alg.convertNumSys(numbDouble.ToString(), 10, 2)  + "\n"+alg.convertNumSys(res.ToString(),10,2);
+                double res = numbInt + numbDouble;
+                outputText.Text = "" + alg.convertNumSys(numbInt.ToString(), 10, 2) + "\n" + alg.convertNumSys(numbDouble.ToString(), 10, 2) + "\n" + alg.convertNumSys(res.ToString(), 10, 2);
 
             }
             catch
@@ -127,8 +127,8 @@ namespace PCLogic
             try
             {
                 numbInt = Convert.ToInt32(intTextBox.Text);
-                numbDouble = Convert.ToDouble(floatTextBox.Text);               
-                if(numbInt > 0)
+                numbDouble = Convert.ToDouble(floatTextBox.Text);
+                if (numbInt > 0)
                 {
                     outputText.Text = "Straight code is: 00," + alg.convertNumSys(numbInt.ToString(), 10, 2);
                 }
@@ -149,7 +149,7 @@ namespace PCLogic
         {
             try
             {
-                
+
                 numbInt = Convert.ToInt32(intTextBox.Text);
                 numbDouble = Convert.ToDouble(floatTextBox.Text);
                 if (numbInt > 0)
@@ -173,7 +173,7 @@ namespace PCLogic
         {
             try
             {
-                
+
                 numbInt = Convert.ToInt32(intTextBox.Text);
                 numbDouble = Convert.ToDouble(floatTextBox.Text);
                 if (numbInt > 0)
@@ -184,7 +184,7 @@ namespace PCLogic
                 {
                     int res = Convert.ToInt32(alg.convertNumSys(alg.Inversion(Convert.ToInt32(alg.convertNumSys(Math.Abs(numbInt).ToString(), 10, 2))), 2, 10));
                     res++;
-                    outputText.Text = "Additional code is: 11,"+alg.convertNumSys(res.ToString(), 10, 2);
+                    outputText.Text = "Additional code is: 11," + alg.convertNumSys(res.ToString(), 10, 2);
                 }
 
             }
@@ -202,9 +202,9 @@ namespace PCLogic
             string[] parInt = new string[2];
             parInt[0] = ""; parInt[1] = "";
             int iterator = 0;
-            for (int i = 0; i < parametersChar.Length; i++ )
+            for (int i = 0; i < parametersChar.Length; i++)
             {
-                if(parametersChar[i] == ',')
+                if (parametersChar[i] == ',')
                 {
                     iterator++;
                 }
@@ -218,7 +218,49 @@ namespace PCLogic
             outputText.Text = outstring[1];
             MessageBox.Show("Result: " + outstring[0]);
         }
-        
 
+        private void decBinButton_Click(object sender, RoutedEventArgs e)
+        {
+            outputText.TextAlignment = TextAlignment.Right;
+            string first = alg.DecimalBin(intTextBox.Text);
+            string second = alg.DecimalBin(floatTextBox.Text);
+            try
+            {
+                char[] firstTChar = intTextBox.Text.ToCharArray();                
+                if (floatTextBox.Text != "0")
+                {
+                    char[] secondTChar = floatTextBox.Text.ToCharArray();
+                    if (Convert.ToInt32(floatTextBox.Text) > 0)
+                    {
+                        int a, b;
+                        a = Convert.ToInt32(intTextBox.Text);
+                        b = Convert.ToInt32(floatTextBox.Text);
+                        int res = a + b;
+                        outputText.Text = first + "\n" + second + "\n" + alg.DecimalBin(res.ToString());
+                    }
+                    else
+                    {
+                        int a, b;
+                        a = Convert.ToInt32(intTextBox.Text);
+                        b = Math.Abs(Convert.ToInt32(floatTextBox.Text));
+                        int res = a - b;
+                        outputText.Text = first + "\n" + alg.DecimalBin(b.ToString()) + "\n" + alg.DecimalBin(res.ToString());
+                    }
+                }
+                else
+                {
+                    
+                    outputText.Text = alg.DecimalBin(intTextBox.Text);
+                }
+            }
+
+
+            catch
+            {
+                MessageBox.Show("Input numb correctly");
+            }
+
+
+        }
     }
 }

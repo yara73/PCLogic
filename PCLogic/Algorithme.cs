@@ -184,5 +184,16 @@ namespace PCLogic
             result[0] = res;
             return result;
         }
+        public string DecimalBin(string numb)
+        {
+            Algorithme alg = new Algorithme();
+            char[] TChar = numb.ToCharArray();
+            string final = "";
+            for (int i = 0; i < TChar.Length; i++)
+            {
+                final += alg.convertNumSys(TChar[i].ToString(), 10, 2) + ".";
+            }
+            return final;
+        }
     }
 }
