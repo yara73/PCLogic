@@ -58,6 +58,7 @@ namespace PCLogic
         {
             try
             {
+                outputText.TextAlignment = TextAlignment.Right;
                 numbInt = Convert.ToInt32(intTextBox.Text);
                 numbDouble = Convert.ToDouble(floatTextBox.Text);
                 double res = numbInt + numbDouble;                               
@@ -74,6 +75,7 @@ namespace PCLogic
         {
             try
             {
+                outputText.TextAlignment = TextAlignment.Right;
                 numbInt = Convert.ToInt32(intTextBox.Text);
                 numbDouble = Convert.ToDouble(floatTextBox.Text);
                 double res = numbInt - numbDouble;
@@ -90,6 +92,7 @@ namespace PCLogic
         {
             try
             {
+                outputText.TextAlignment = TextAlignment.Right;
                 numbInt = Convert.ToInt32(intTextBox.Text);
                 numbDouble = Convert.ToDouble(floatTextBox.Text);
                 double res = numbInt * numbDouble;
@@ -106,6 +109,7 @@ namespace PCLogic
         {
             try
             {
+                outputText.TextAlignment = TextAlignment.Right;
                 numbInt = Convert.ToInt32(intTextBox.Text);
                 numbDouble = Convert.ToDouble(floatTextBox.Text);
                 double res = numbInt / numbDouble;
@@ -145,6 +149,7 @@ namespace PCLogic
         {
             try
             {
+                
                 numbInt = Convert.ToInt32(intTextBox.Text);
                 numbDouble = Convert.ToDouble(floatTextBox.Text);
                 if (numbInt > 0)
@@ -168,6 +173,7 @@ namespace PCLogic
         {
             try
             {
+                
                 numbInt = Convert.ToInt32(intTextBox.Text);
                 numbDouble = Convert.ToDouble(floatTextBox.Text);
                 if (numbInt > 0)
@@ -186,6 +192,14 @@ namespace PCLogic
             {
                 MessageBox.Show("Введите допустимое число!");
             }
+        }
+
+        private void binIntButton_Click(object sender, RoutedEventArgs e)
+        {
+            outputText.TextAlignment = TextAlignment.Left;
+            string[] outstring = new string[3];
+            outstring = alg.GUIConverter(intTextBox.Text, 10, 2);
+            outputText.Text = outstring[1];
         }
         
 
