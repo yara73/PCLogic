@@ -197,8 +197,24 @@ namespace PCLogic
         private void binIntButton_Click(object sender, RoutedEventArgs e)
         {
             outputText.TextAlignment = TextAlignment.Left;
+            string parameters = floatTextBox.Text;
+            char[] parametersChar = parameters.ToCharArray();
+            string[] parInt = new string[2];
+            parInt[0] = ""; parInt[1] = "";
+            int iterator = 0;
+            for (int i = 0; i < parametersChar.Length; i++ )
+            {
+                if(parametersChar[i] == ',')
+                {
+                    iterator++;
+                }
+                else
+                {
+                    parInt[iterator] += parametersChar[i];
+                }
+            }
             string[] outstring = new string[3];
-            outstring = alg.GUIConverter(intTextBox.Text, 10, 2);
+            outstring = alg.GUIConverter(intTextBox.Text, Convert.ToInt32(parInt[0]), Convert.ToInt32(parInt[1]));
             outputText.Text = outstring[1];
             MessageBox.Show("Result: " + outstring[0]);
         }

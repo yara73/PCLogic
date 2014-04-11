@@ -5,7 +5,7 @@
         Title="PCLogic programm" Height="520" Width="338">
     <Grid>
         <TextBox x:Name="intTextBox" HorizontalAlignment="Left" Height="23" Margin="48,80,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="binIntButton" Content="Conert" HorizontalAlignment="Left" Margin="198,80,0,0" VerticalAlignment="Top" Width="75" Click="binIntButton_Click"/>
+        <Button x:Name="binIntButton" Content="Convert" HorizontalAlignment="Left" Margin="198,80,0,0" VerticalAlignment="Top" Width="75" Click="binIntButton_Click"/>
         <TextBox x:Name="floatTextBox" HorizontalAlignment="Left" Height="23" Margin="48,133,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="inverseButton" Content="Inverse" HorizontalAlignment="Left" Margin="198,105,0,0" VerticalAlignment="Top" Width="75" Click="inverseButton_Click"/>
         <ComboBox x:Name="actionComboBox" HorizontalAlignment="Left" Margin="0,107,0,0" VerticalAlignment="Top" Width="43" IsReadOnly="True">

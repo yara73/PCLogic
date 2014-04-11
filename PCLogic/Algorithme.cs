@@ -176,7 +176,7 @@ namespace PCLogic
                 res = digits[dig] + res;
                 temp = temp / outBase;
                 Console.Write("Binary: " + dig + "\t");
-                result[1] += "Binary: " + dig + "\t";
+                result[1] += " Sybmol: " + dig + "\t";
                 Console.Write("Code: " + res + "    ");
                 result[1] += "Code: " + res + "    " + "\n";
                 Console.WriteLine();
