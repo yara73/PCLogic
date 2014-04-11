@@ -53,23 +53,21 @@ namespace PCLogic
                 MessageBox.Show("Введите допустимое число!");
             }
         }
-        private string Inversion(int numb)
-        {
-            char[] numbChar = numb.ToString().ToCharArray();
-            string numbString = "";
-            for (int i = 0; i < numbChar.Length; i++)
-            {
-                numbChar[i] = (numbChar[i] > '0') ? '0' : '1';
-                numbString += numbChar[i];
-            }
-
-            return numbString;
-        }
         
-
         private void plus_Selected(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("+");
+            try
+            {
+                numbInt = Convert.ToInt32(intTextBox.Text);
+                numbDouble = Convert.ToDouble(floatTextBox.Text);
+                double sum = numbInt + numbDouble;
+                outputText.Text = "";
+
+            }
+            catch
+            {
+                MessageBox.Show("Введите допустимое число!");
+            }
         }
 
         private void minus_Selected(object sender, RoutedEventArgs e)
