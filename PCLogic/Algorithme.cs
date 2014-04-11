@@ -8,19 +8,23 @@ namespace PCLogic
 {
     class Algorithme
     {
-        public string Inversion(double numb)
+        public string Inversion(int numb)
         {
             char[] numbChar = numb.ToString().ToCharArray();
             string numbString = "";
             for (int i = 0; i < numbChar.Length; i++)
             {
-                numbChar[i] = (numbChar[i] > '0') ? '1' : '0';
+                numbChar[i] = (numbChar[i] > '0') ? '0' : '1';
                 numbString += numbChar[i];
             }
 
             return numbString;
         }
-        static String floatDIG(double source, int destpoint)
+        public string StraightCode(int numb)
+        {
+            return null;
+        }
+        public String floatDIG(double source, int destpoint)
         {
             string dest = "";
             char[] c = new char[destpoint + 3];
@@ -36,7 +40,7 @@ namespace PCLogic
             }
             return dest;
         }
-        static String convertNumSys(System.String s, System.Int32 inBase, System.Int32 outBase)
+        public String convertNumSys(System.String s, System.Int32 inBase, System.Int32 outBase)
         {
             const System.String digits = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             System.String res = "";
